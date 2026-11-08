@@ -1,0 +1,18 @@
+{
+  "name": "app-darpe",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Atendimentos DARPE · Regional Itapevi",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "check": "node --check src/server.js && node --check public/scripts/mobile-home.js && node --check public/scripts/darpe-atendimentos.js && node --check public/scripts/auth.js",
+    "test": "node --test test/*.test.js"
+  },
+  "devDependencies": {
+    "jsdom": "20.0.3"
+  }
+}

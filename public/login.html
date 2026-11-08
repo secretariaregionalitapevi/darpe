@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#1e4b7a">
+  <title>Entrar | CCB DARPE</title>
+  <meta name="application-name" content="CCB DARPE">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="CCB DARPE">
+  <link rel="apple-touch-icon" href="/icons/icon-180.png">
+  <link rel="icon" href="/assets/favicon.png"><link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="/styles/main.css?v=2.0.15">
+  <link rel="stylesheet" href="/styles/identity.css?v=2.1.4">
+  <link rel="stylesheet" href="/styles/install-prompt.css?v=1.0.0">
+  <script defer src="/scripts/install-prompt.js?v=1.0.0"></script>
+  <script defer src="/scripts/auth.js?v=2.0.3"></script>
+<link rel="stylesheet" href="/styles/app-feedback.css"><script defer src="/scripts/app-feedback.js"></script><link rel="stylesheet" href="/styles/fontawesome.min.css"><link rel="stylesheet" href="/styles/solid.min.css"></head>
+<body class="login-page" style="background: #f1f5f9; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0;">
+  
+  <main class="auth-wrap">
+    <div class="sac-card" style="margin: auto;">
+      <div class="sac-header">
+        <img src="/assets/logo-ccb.png" alt="CCB" class="sac-logo" style="max-width: 220px; filter: brightness(0) invert(1); margin-bottom: 16px;" />
+        <h1 class="sac-title">CCB DARPE</h1>
+        <p class="sac-subtitle">Equipes • Regional Itapevi</p>
+      </div>
+
+      <div class="sac-body">
+        <form id="login-form" class="sac-form">
+          <div class="form-group">
+            <div class="input-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <input type="email" name="email" autocomplete="email" placeholder="E-mail" required />
+          </div>
+
+          <div class="form-group">
+            <div class="input-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M144 144v48H384c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H96V144C96 64.5 160.5 0 240 0s144 64.5 144 144v48H336V144c0-53-43-96-96-96s-96 43-96 96z"/></svg>
+            </div>
+            <input type="password" name="password" id="password" autocomplete="current-password" placeholder="Sua senha" required />
+            <div id="toggle-password" class="password-toggle" style="display: flex; align-items: center; justify-content: center; width: 40px; cursor: pointer; color: #64748b;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            </div>
+          </div>
+
+          <p id="feedback" class="auth-feedback" role="status" aria-live="polite"></p>
+
+          <button type="submit" class="sac-btn login-submit">
+            <svg class="login-submit-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><path d="M497 273 329 441c-15 15-41 4.4-41-17v-96H152c-13.3 0-24-10.7-24-24v-96c0-13.3 10.7-24 24-24h136V88c0-21.4 25.9-32.1 41-17l168 168c9.4 9.4 9.4 24.6 0 34zM192 436v-40c0-6.6-5.4-12-12-12H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h84c6.6 0 12-5.4 12-12V76c0-6.6-5.4-12-12-12H96C43 64 0 107 0 160v192c0 53 43 96 96 96h84c6.6 0 12-5.4 12-12z"/></svg>
+            <span class="login-submit-spinner" aria-hidden="true"></span>
+            <span class="login-submit-label">LOGIN</span>
+          </button>
+
+          <div style="margin-top: 15px;">
+            <a href="https://appvisitasregional.vercel.app/user/login-v1" class="login-forgot-link">Esqueceu a senha?</a>
+          </div>
+        </form>
+
+        <div class="sac-footer-links">
+          Não tem uma conta?<br>
+          <a href="https://appvisitasregional.vercel.app/user/cadastro" class="sac-btn-secondary">Criar conta</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <div class="sac-page-footer">
+    <span class="footer-brand">&copy; CCB DARPE</span>
+    <a href="#" class="footer-ccb">Congregação Cristã no Brasil</a>
+    <span class="footer-region">Regional Itapevi</span>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded',()=>{
+      if(mobileSession.token()) location.replace('/');
+      const form=document.querySelector('#login-form'),feedback=document.querySelector('#feedback'),button=form.querySelector('.login-submit'),buttonLabel=button.querySelector('.login-submit-label');
+      const setLoginLoading=loading=>{
+        form.setAttribute('aria-busy',String(loading));
+        button.disabled=loading;
+        button.classList.toggle('is-loading',loading);
+        buttonLabel.textContent=loading?'AUTENTICANDO...':'LOGIN';
+      };
+      document.querySelector('#toggle-password').onclick=(event)=>{const button=event.currentTarget;const input=document.querySelector('#password');const reveal=input.type==='password';input.type=reveal?'text':'password';button.innerHTML=reveal?'<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 3 18 18"/><path d="M10.6 10.7a2 2 0 0 0 2.7 2.7"/><path d="M9.9 4.2A10.5 10.5 0 0 1 12 4c7 0 11 8 11 8a18 18 0 0 1-2.1 3.2"/><path d="M6.6 6.6C3.2 8.7 1 12 1 12s4 8 11 8a10.7 10.7 0 0 0 5.4-1.5"/></svg>':'<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12Z"/><circle cx="12" cy="12" r="3"/></svg>';button.setAttribute('aria-label',reveal?'Ocultar senha':'Mostrar senha');button.setAttribute('aria-pressed',String(reveal));input.focus()};
+      form.onsubmit=async(event)=>{event.preventDefault();setLoginLoading(true);feedback.textContent='Autenticando suas credenciais...';feedback.className='auth-feedback is-loading';const notice=AppFeedback.show({type:'loading',title:'Entrando no DARPE',message:'Conferindo seu acesso aprovado.'});
+        try{const response=await fetch('/api/mobile/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(form)))});const data=await response.json();if(!response.ok)throw new Error(data.error);mobileSession.set(data);location.replace('/');}
+        catch(error){
+          notice.close();AppFeedback.show({type:'error',title:'Não foi possível entrar',message:error.message});setLoginLoading(false);
+          feedback.textContent=error.message||'Não foi possível entrar.';
+          feedback.className='auth-feedback is-error';
+        }
+      };
+    });
+  </script>
+</body>
+</html>
