@@ -4,3 +4,89 @@
 
 /* Data em linha propria; horarios juntos inclusive no celular. */
 .mobile-papeleta .da-time-row{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}.mobile-papeleta .da-time-row>label{grid-column:auto!important}.mobile-papeleta .da-editor-heading{margin-bottom:24px}.mobile-papeleta #da-form>fieldset:first-child{padding-top:0}
+
+.darpe-route .summary-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.mobile-attendance-card{flex-wrap:wrap;gap:12px}
+.mobile-card-main{display:flex;align-items:center;gap:14px;flex:1;min-width:0;color:inherit;text-decoration:none}
+.mobile-card-info>strong{display:flex;align-items:center;gap:7px;overflow-wrap:anywhere}
+.mobile-card-info>strong .fa{color:#718096;font-size:13px;flex:none}
+.mobile-card-tags .mobile-sector-badge{font-size:10px;line-height:1.35}
+.mobile-sector-badge .fa{margin-right:4px}
+.mobile-sector-badge.sector-1{background:#f1eafd;color:#66418d}
+.mobile-sector-badge.sector-2{background:#e2f5f4;color:#087e78}
+.mobile-sector-badge.sector-3{background:#e8efff;color:#3159a8}
+.mobile-sector-badge.sector-4{background:#fff0df;color:#a55418}
+.mobile-card-contacts{display:flex;align-items:center;justify-content:flex-end;gap:8px;width:100%;padding-left:58px}
+.mobile-contact-link{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:5px 10px;border-radius:10px;text-decoration:none;font-size:11px;font-weight:700}
+.mobile-contact-link svg{width:17px;height:17px;fill:currentColor}
+.mobile-contact-link.is-whatsapp{background:#e8f7ed;color:#168044}
+.mobile-contact-link.is-phone{background:#edf3fb;color:#315b8e}
+.mobile-contact-link:focus-visible,.mobile-card-main:focus-visible{outline:3px solid #3b82f6;outline-offset:3px;border-radius:9px}
+@media(max-width:600px){.darpe-route .summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.mobile-papeleta #da-detail-close{margin-bottom:18px}
+.mobile-papeleta #da-detail-content>h2{margin:0 0 17px;color:#0f172a;font-size:21px}
+.mobile-papeleta .da-detail-actions{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:3px}
+.mobile-papeleta .da-detail-actions .btn{min-height:42px}
+.mobile-papeleta .da-detail-line{padding:12px 0}
+.mobile-papeleta #da-detail{padding:18px}
+.mobile-papeleta #da-detail-close{margin:0 0 18px}
+.mobile-papeleta #da-detail-content{display:grid;gap:18px}
+.mobile-papeleta #da-detail-content>.da-detail-heading{display:grid;gap:4px}
+.mobile-papeleta .da-detail-kicker{color:#35628f;font-size:11px;font-weight:750;letter-spacing:.08em;text-transform:uppercase}
+.mobile-papeleta #da-detail-content>.da-detail-heading h2{margin:0;color:#173b57;font-size:22px;line-height:1.25}
+.mobile-papeleta .da-detail-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:0}
+.mobile-papeleta .da-detail-actions .btn{min-height:46px}
+.mobile-papeleta .da-detail-place{display:grid;grid-template-columns:46px minmax(0,1fr);align-items:center;gap:12px;padding:17px;border-radius:16px;background:#1e4b7a;color:#fff}
+.mobile-papeleta .da-detail-place-icon{display:grid;place-items:center;width:44px;height:44px;border-radius:13px;background:#ffffff20;color:#fff;font-size:19px}
+.mobile-papeleta .da-detail-place-copy{min-width:0}
+.mobile-papeleta .da-detail-place-copy>span{display:block;color:#d4e4f4;font-size:11px;font-weight:650}
+.mobile-papeleta .da-detail-place-copy h3{margin:4px 0 0;color:#fff;font-size:17px;line-height:1.3;overflow-wrap:anywhere}
+.mobile-papeleta .da-detail-place-meta{grid-column:1/-1;display:flex;align-items:flex-start;gap:8px;padding-top:12px;border-top:1px solid #ffffff38;color:#e4edf7;font-size:12px;line-height:1.5;overflow-wrap:anywhere}
+.mobile-papeleta .da-detail-place-meta .fa{margin-top:2px;flex:none}
+.mobile-papeleta .da-detail-overview{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.mobile-papeleta .da-detail-overview-card{display:grid;align-content:start;gap:8px;min-width:0;padding:13px;border:1px solid #dfe7f0;border-radius:14px;background:#fff}
+.mobile-papeleta .da-detail-overview-card>span,.mobile-papeleta .da-detail-paper-card>span{color:#68798d;font-size:11px;font-weight:700}
+.mobile-papeleta .da-detail-overview-card>strong{display:flex;align-items:flex-start;gap:7px;color:#23486c;font-size:12px;line-height:1.45;overflow-wrap:anywhere}
+.mobile-papeleta .da-detail-overview-card>strong .fa{margin-top:2px;flex:none}
+.mobile-papeleta .da-detail-sector.sector-1{background:#f4effb;border-color:#e4d7f5}
+.mobile-papeleta .da-detail-sector.sector-1>strong{color:#66418d}
+.mobile-papeleta .da-detail-sector.sector-2{background:#eaf7f5;border-color:#cfeae6}
+.mobile-papeleta .da-detail-sector.sector-2>strong{color:#087e78}
+.mobile-papeleta .da-detail-sector.sector-3{background:#edf2ff;border-color:#dbe4ff}
+.mobile-papeleta .da-detail-sector.sector-3>strong{color:#3159a8}
+.mobile-papeleta .da-detail-sector.sector-4{background:#fff3e7;border-color:#f8e0c3}
+.mobile-papeleta .da-detail-sector.sector-4>strong{color:#a55418}
+.mobile-papeleta .da-detail-section{display:grid;gap:10px}
+.mobile-papeleta .da-detail-section-heading h3{margin:0;color:#173b57;font-size:15px;font-weight:750}
+.mobile-papeleta .da-detail-team-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.mobile-papeleta .da-detail-team-card,.mobile-papeleta .da-detail-paper-card{display:grid;align-content:start;gap:9px;min-width:0;padding:12px;border:1px solid #e1e8f0;border-radius:13px;background:#fff}
+.mobile-papeleta .da-detail-team-card{min-height:92px}
+.mobile-papeleta .da-detail-team-label{display:flex;align-items:center;gap:7px;color:#64788e;font-size:10px;font-weight:700;line-height:1.35}
+.mobile-papeleta .da-detail-team-label .fa{color:#2e6595}
+.mobile-papeleta .da-detail-team-card p,.mobile-papeleta .da-detail-paper-card p{margin:0;color:#263f59;font-size:12px;font-weight:650;line-height:1.5;overflow-wrap:anywhere}
+.mobile-papeleta .da-detail-team-card p.da-detail-empty,.mobile-papeleta .da-detail-paper-card p.da-detail-empty{color:#98a5b3;font-weight:500}
+.mobile-papeleta .da-detail-paper-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.mobile-papeleta .da-detail-paper-card:first-child{grid-column:1/-1}
+.mobile-papeleta .da-detail-hymns{gap:10px}
+.mobile-papeleta .da-detail-hymn-list{display:flex;flex-wrap:wrap;gap:7px}
+.mobile-papeleta .da-detail-hymn{display:grid;place-items:center;min-width:39px;height:34px;padding:0 9px;border-radius:9px;background:#eaf2f8;color:#1e4b7a;font-size:12px;font-weight:800}
+.mobile-papeleta .da-detail-hymn-list>.da-detail-empty{color:#98a5b3;font-size:12px}
+.mobile-papeleta .da-detail-contact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.mobile-papeleta .da-detail-contact{display:grid;grid-template-columns:20px minmax(0,1fr);align-items:center;gap:3px 7px;padding:11px;border:1px solid #dce8e1;border-radius:12px;background:#f3faf5}
+.mobile-papeleta .da-detail-contact>.fa{grid-row:span 2;color:#21804c}
+.mobile-papeleta .da-detail-contact>span{color:#68798d;font-size:10px;font-weight:700}
+.mobile-papeleta .da-detail-contact>strong{color:#214e38;font-size:11px;overflow-wrap:anywhere}
+.mobile-papeleta .da-detail-prayer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.mobile-papeleta .da-detail-prayer-card{display:flex;align-items:center;justify-content:space-between;gap:8px;min-width:0;padding:11px;border:1px solid #e0e8ef;border-radius:11px;background:#f8fafc}
+.mobile-papeleta .da-detail-prayer-card>span{color:#50647a;font-size:11px;line-height:1.35}
+.mobile-papeleta .da-detail-prayer-card>strong{display:grid;place-items:center;min-width:28px;height:28px;padding:0 6px;border-radius:8px;background:#eaf2f8;color:#1e4b7a;font-size:12px}
+.mobile-papeleta .da-detail-prayer-card.is-all{grid-column:1/-1;background:#edf7f1;border-color:#d4eadb}
+.mobile-papeleta .da-detail-prayer-card.is-all>strong{min-width:auto;padding:0 10px;background:#d9efe0;color:#216b3b}
+.mobile-papeleta .da-detail-metadata{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;color:#7a8998;font-size:10px}
+.mobile-papeleta .da-detail-metadata span{overflow-wrap:anywhere}
+.mobile-papeleta .da-detail-line{padding:12px 0}
+@media(max-width:370px){
+ .mobile-papeleta #da-detail{padding:14px}
+ .mobile-papeleta .da-detail-team-grid,.mobile-papeleta .da-detail-paper-grid,.mobile-papeleta .da-detail-contact-grid{grid-template-columns:1fr}
+ .mobile-papeleta .da-detail-paper-card:first-child{grid-column:auto}
+}
