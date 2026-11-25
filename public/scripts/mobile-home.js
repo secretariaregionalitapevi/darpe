@@ -193,7 +193,8 @@
         $('mobile-state').hidden = false;
         $('mobile-state').textContent = 'Carregando seus atendimentos…';
         try {
-            context = await api('contexto/');
+            const [loadedContext, loadedRecords] = await Promise.all([api('contexto/'), api('atendimentos/?'+new URLSearchParams({data:$('mobile-date').value}))]);
+            context = loadedContext;
             if (run !== version) return;
             scope();
             const name = context.usuario?.nome || mobileSession.get()?.user?.user_metadata?.full_name || '';
@@ -202,7 +203,7 @@
             for (const sector of context.setores) {
                 $('mobile-sector').add(new Option('Setor ' + sector.id + ' · ' + sector.nome, sector.id));
             }
-            records = (await api('atendimentos/')).items;
+            records = loadedRecords.items;
             if (run === version) draw();
         } catch (error) {
             if (run === version) {
@@ -222,7 +223,7 @@
             $('mobile-city').value || 'Regional Itapevi';
         draw();
     };
-    $('mobile-date').onchange = draw;
+    $('mobile-date').onchange = load;
     $('mobile-sector').onchange = draw;
     $('mobile-refresh').onclick = load;
     $('mobile-logout').onclick = () => logoutMobile();

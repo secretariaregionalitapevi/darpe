@@ -12,7 +12,7 @@
   <link rel="apple-touch-icon" href="/icons/icon-180.png">
   <link rel="icon" href="/assets/favicon.png"><link rel="manifest" href="/manifest.webmanifest">
   <link rel="stylesheet" href="/styles/main.css?v=2.0.15">
-  <link rel="stylesheet" href="/styles/identity.css?v=2.1.4">
+  <link rel="stylesheet" href="/styles/identity.css?v=2.1.6">
   <link rel="stylesheet" href="/styles/install-prompt.css?v=1.0.0">
   <script defer src="/scripts/install-prompt.js?v=1.0.0"></script>
   <script defer src="/scripts/auth.js?v=2.0.3"></script>
@@ -84,10 +84,10 @@
         buttonLabel.textContent=loading?'AUTENTICANDO...':'LOGIN';
       };
       document.querySelector('#toggle-password').onclick=(event)=>{const button=event.currentTarget;const input=document.querySelector('#password');const reveal=input.type==='password';input.type=reveal?'text':'password';button.innerHTML=reveal?'<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 3 18 18"/><path d="M10.6 10.7a2 2 0 0 0 2.7 2.7"/><path d="M9.9 4.2A10.5 10.5 0 0 1 12 4c7 0 11 8 11 8a18 18 0 0 1-2.1 3.2"/><path d="M6.6 6.6C3.2 8.7 1 12 1 12s4 8 11 8a10.7 10.7 0 0 0 5.4-1.5"/></svg>':'<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12Z"/><circle cx="12" cy="12" r="3"/></svg>';button.setAttribute('aria-label',reveal?'Ocultar senha':'Mostrar senha');button.setAttribute('aria-pressed',String(reveal));input.focus()};
-      form.onsubmit=async(event)=>{event.preventDefault();setLoginLoading(true);feedback.textContent='Autenticando suas credenciais...';feedback.className='auth-feedback is-loading';const notice=AppFeedback.show({type:'loading',title:'Entrando no DARPE',message:'Conferindo seu acesso aprovado.'});
+      form.onsubmit=async(event)=>{event.preventDefault();setLoginLoading(true);feedback.textContent='Autenticando suas credenciais...';feedback.className='auth-feedback is-loading';
         try{const response=await fetch('/api/mobile/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(form)))});const data=await response.json();if(!response.ok)throw new Error(data.error);mobileSession.set(data);location.replace('/');}
         catch(error){
-          notice.close();AppFeedback.show({type:'error',title:'Não foi possível entrar',message:error.message});setLoginLoading(false);
+          AppFeedback.show({type:'error',title:'Não foi possível entrar',message:error.message});setLoginLoading(false);
           feedback.textContent=error.message||'Não foi possível entrar.';
           feedback.className='auth-feedback is-error';
         }

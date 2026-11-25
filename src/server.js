@@ -28,8 +28,12 @@ async function handler(req,res){
    const response=await fetch(`${supabase.replace(/\/$/,'')}/auth/v1/token?grant_type=${refresh?'refresh_token':'password'}`,{method:'POST',headers:{apikey:anon,'Content-Type':'application/json'},body:JSON.stringify(refresh?{refresh_token:data.refresh_token}:{email:data.email,password:data.password}),signal:AbortSignal.timeout(15000)});
    if(!response.ok)return json(res,401,{error:'Não foi possível entrar. Confira e-mail e senha ou renove a sessão.'});
    const session=await response.json();
-   const check=await central('contexto',{method:'GET',headers:{authorization:`Bearer ${session.access_token}`}});
+   const check=await central('contexto',{method:'GET',headers:{authorization:`Bearer ${session.access_token}`}},'?resumo=1');
    if(!check.ok){const result=await check.json();return json(res,check.status,{error:result.error||'Acesso DARPE não autorizado.'});}
+   if(!refresh){
+    const audit=await central('audit-login',{method:'POST',headers:{authorization:'Bearer '+session.access_token}});
+    if(!audit.ok){const result=await audit.json();return json(res,audit.status,{error:result.error||'Não foi possível registrar o acesso. Tente novamente.'});}
+   }
    return json(res,200,{access_token:session.access_token,refresh_token:session.refresh_token,expires_in:session.expires_in});
   }
   const match=url.pathname.match(/^\/api\/darpe\/(contexto|pessoas|atendimentos|exportar-pdf)\/$/);

@@ -47,7 +47,9 @@ test('abrir atendimento carrega papeleta completa e oferece editar e PDF',async(
  window.HTMLAnchorElement.prototype.click=()=>{};
  window.URL.createObjectURL=()=> 'blob:test';
  window.URL.revokeObjectURL=()=>{};
+ const requests=[];
  window.authFetch=async url=>{
+  requests.push(String(url));
   if(String(url).includes('exportar-pdf'))return new Response('%PDF-test',{status:200});
   const body=String(url).includes('contexto')
    ?{escopo:{level:'regional'},setores:[{id:1,nome:'Sistemas de Ressocialização e Socioeducativos'}],localidades:[]}
@@ -57,6 +59,8 @@ test('abrir atendimento carrega papeleta completa e oferece editar e PDF',async(
  try{
   window.eval(script);
   await new Promise(resolve=>setTimeout(resolve,30));
+  assert(requests.some(url=>url.includes('atendimentos/?id='+record.id)));
+  assert(!requests.some(url=>url.endsWith('atendimentos/')));
   const document=window.document;
   const details=document.getElementById('da-detail-content');
   const text=details.textContent;

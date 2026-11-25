@@ -271,8 +271,16 @@
 .auth-page .sac-card { width:min(500px,calc(100% - 28px)); }
 .auth-page .sac-page-footer { margin-top:20px; }
 .login-forgot-link { color:#1e4b7a !important; font-weight:700; text-decoration:none; font-size:13px; }
-.login-page .auth-wrap { min-height:auto; padding-bottom:0; }
-.login-page > .sac-page-footer { margin-top:18px; margin-bottom:22px; }
+/* Balance the login card and footer within the available screen. */
+.login-page { min-height:100vh; min-height:100svh; display:flex; flex-direction:column; }
+.login-page .auth-wrap {
+  flex:1 0 auto;
+  min-height:auto;
+  box-sizing:border-box;
+  padding:clamp(40px,10vh,100px) 20px 0;
+  padding-top:max(env(safe-area-inset-top),clamp(40px,10svh,100px));
+}
+.login-page > .sac-page-footer { flex:none; margin:50px 20px max(28px,env(safe-area-inset-bottom)); }
 .auth-toast { position:fixed; z-index:3000; inset:0; display:flex; align-items:center; justify-content:center; width:auto; box-sizing:border-box; padding:24px; background:rgba(31,41,55,.5); opacity:0; visibility:hidden; pointer-events:none; transform:none; transition:opacity .2s ease,visibility .2s ease; }
 .auth-toast.is-visible { opacity:1; visibility:visible; pointer-events:auto; transform:none; }
 .auth-toast-card { display:flex; flex-direction:column; align-items:center; justify-content:center; width:min(480px,100%); min-height:320px; box-sizing:border-box; padding:44px 38px 38px; border-radius:24px; background:#fff; box-shadow:0 18px 45px rgba(15,23,42,.22); text-align:center; }
@@ -296,7 +304,7 @@
 
 /* Proporções do botão de entrada conforme o modelo */
 .login-page .auth-feedback:empty { display:none; min-height:0; }
-.login-page .login-submit { margin-top:14px; }
+.login-page .login-submit { margin-top:40px; }
 .login-page .login-submit-icon { width:20px; height:20px; stroke:currentColor; stroke-width:12px; paint-order:stroke fill; }
 .auth-back-icon { width:12px; height:14px; flex:0 0 auto; fill:currentColor; }
 
@@ -317,3 +325,16 @@
 .reset-page .auth-back-link { margin-top:23px; }
 .reset-page .sac-page-footer { margin-top:18px; }
 @media(max-width:480px){.reset-page .auth-wrap{padding:14px 10px 20px}.reset-page .sac-header{padding:30px 20px}.reset-page .sac-logo{width:170px;max-width:170px}.reset-page .sac-body{padding:26px 18px 28px}}
+
+/* Compact spacing for phones and short windows. */
+@media (max-width:520px), (max-height:760px) {
+  .login-page .auth-wrap {
+    padding:28px 16px 0;
+    padding-top:max(28px,env(safe-area-inset-top));
+  }
+  .login-page .login-submit { margin-top:24px; }
+  .login-page > .sac-page-footer { margin-top:28px; margin-bottom:max(24px,env(safe-area-inset-bottom)); }
+}
+
+/* Feedback already provides spacing above the submit button. */
+.login-page .auth-feedback:not(:empty) + .login-submit { margin-top:12px; }
